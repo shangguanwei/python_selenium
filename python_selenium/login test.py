@@ -1,0 +1,17 @@
+import time
+from selenium import webdriver
+d = webdriver.Chrome()
+d.get('http://baihu.680000cun.com/')
+time.sleep(5)
+ele_name = d.find_element_by_id('UsernameOrPhoneNumber')
+ele_pwd = d.find_element_by_id('Password')
+ele_login = d.find_element_by_css_selector('button[type="submit"]')
+ele_name.send_keys('sgw')
+ele_pwd.send_keys('123456')
+ele_login.click()
+time.sleep(5)
+ele_ptyw = d.find_element_by_xpath('//*[@id="sidebar"]/ul/li[1]/a/span')
+ele_ptyw.click()
+time.sleep(5)
+ele_zzgl = d.find_element_by_xpath('//*[@id="sidebar"]/ul/li[1]/ul/li[1]/a')
+ele_zzgl.click()
